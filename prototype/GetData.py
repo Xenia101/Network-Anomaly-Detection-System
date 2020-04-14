@@ -13,14 +13,19 @@ def network_conversation(packet):
     pass
 
 for packet in cap.sniff_continuously():
-  #print(packet)
-  #break
-  #try:
-   #if packet.transport_layer is not None:
-      #print(packet.ip)
-  #except AttributeError as e:
-  #  pass
   results = network_conversation(packet)
   if results != None:
       print(results)
 
+# duration
+# protocol_type
+# service
+# count
+# serror
+# Srv_count
+# Srv_serr or_rate
+# Dst_host_count
+# Dst_host_srv_count
+# Dst_host_srv_serror_rate
+# Num_failed_logins
+# Num_out bount_cmds
