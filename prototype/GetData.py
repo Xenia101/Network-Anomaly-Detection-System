@@ -12,7 +12,16 @@ def network_conversation(packet):
   except AttributeError as e:
     pass
 
+def duration():
+  return 0
+
+def protocol_type(packet):
+  return packet.transport_layer
+
 for packet in cap.sniff_continuously():
+  print(packet.tcp.analysis_ack_rtt)
+  print(protocol_type(packet))
+  break
   results = network_conversation(packet)
   if results != None:
       print(results)
