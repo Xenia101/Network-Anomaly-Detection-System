@@ -7,7 +7,8 @@ import argparse
 
 packets=rdpcap("pcap_files/example.pcap")
 
-flows = {}
+# flows 변경
+flows = dict()
 
 attrs = ['src','sport','dst','dport','proto','push_flag_ratio','average_len','average_payload_len','pkt_count','flow_average_inter_arrival_time','kolmogorov','shannon']
 
