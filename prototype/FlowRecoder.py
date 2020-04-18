@@ -67,7 +67,4 @@ def get_data(path):
             tcp_stream.add(pkt[IP])
         flows[flow_key] = tcp_stream
     return flows
-    
-if __name__ == "__main__":
-    data = get_data("pcap_files/example.pcap")
-    print(gen_json(data))
+

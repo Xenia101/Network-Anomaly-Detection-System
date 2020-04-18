@@ -1,4 +1,6 @@
 # ML
+import FlowRecoder
 
 if __name__ == "__main__":
-    print('main')
+    data = FlowRecoder.get_data("pcap_files/example.pcap")
+    print(FlowRecoder.gen_json(data))
