@@ -7,7 +7,10 @@ from tcp_stream import TCPStream
 import argparse
 from entropy import kolmogorov, shannon
 
-attrs = ['src','sport','dst','dport','proto','push_flag_ratio','average_len','average_payload_len','pkt_count','flow_average_inter_arrival_time']
+attrs = ['src','sport','dst',
+         'dport','proto','push_flag_ratio',
+         'average_len','average_payload_len',
+         'pkt_count','flow_average_inter_arrival_time']
 
 def proto_name(sport,dport,use_dpi=False,payload=None):
     if dport == 80 or sport == 80:
@@ -32,12 +35,12 @@ def gen_json(flows):
     index = 1
     for flow in flows.values():
         data = dict()
+        data['proto_name']              = proto_name(flow.sport,flow.dport)
         data['src']                     = flow.src
         data['sport']                   = flow.sport
         data['dst']                     = flow.dst
         data['dport']                   = flow.dport
         data['proto']                   = flow.proto
-        data['proto_name']              = proto_name(flow.sport,flow.dport)
         data['push_flag_ratio']         = round(flow.push_flag_ratio(),2)
         data['avrg_len']                = round(flow.avrg_len(),2)
         data['avrg_payload_len']        = round(flow.avrg_payload_len(),2)
