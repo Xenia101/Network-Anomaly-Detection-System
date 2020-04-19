@@ -5,6 +5,7 @@ from hashlib import md5
 from scapy.all import *
 from tcp_stream import TCPStream
 import argparse
+from entropy import kolmogorov, shannon
 
 attrs = ['src','sport','dst','dport','proto','push_flag_ratio','average_len','average_payload_len','pkt_count','flow_average_inter_arrival_time']
 
@@ -42,6 +43,7 @@ def gen_json(flows):
         data['avrg_payload_len']        = round(flow.avrg_payload_len(),2)
         data['pkt_count']               = flow.pkt_count
         data['avrg_inter_arrival_time'] = flow.avrg_inter_arrival_time()
+        
         result[index] = data
         index += 1
     return json.dumps(result, indent=4, sort_keys=False)
@@ -67,4 +69,3 @@ def get_data(path):
             tcp_stream.add(pkt[IP])
         flows[flow_key] = tcp_stream
     return flows
-
