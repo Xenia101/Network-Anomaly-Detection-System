@@ -1,5 +1,4 @@
-from FlowRecoder import get_data
-from FlowRecoder import gen_json
+from FlowRecoder import get_data, gen_json
 import json
 import pandas as pd
 import numpy as np
