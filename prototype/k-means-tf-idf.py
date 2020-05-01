@@ -13,15 +13,28 @@ measurements = [x for x in data.values()]
 
 vec = DictVectorizer()
 X = vec.fit_transform(measurements).toarray()
-#
-from sklearn.cluster import KMeans
 
-kmeans = KMeans(n_clusters=2).fit(X)
+## LOF scores
+from sklearn.neighbors import LocalOutlierFactor
+clf = LocalOutlierFactor(n_neighbors=3, contamination=0.1)
+y_pred = clf.fit(X)
+X_scores = clf.negative_outlier_factor_
+X_scores = np.array(X_scores, dtype=np.float64)
 
-labels = kmeans.labels_
-centers = kmeans.cluster_centers_
+print(-X_scores)
 
-plt.scatter(X[:,0], X[:,1],c = kmeans.fit_predict(X), cmap='rainbow')
-plt.show()
+## Kmeans
+#from sklearn.cluster import KMeans
+#kmeans = KMeans(n_clusters=1).fit(X)
+#labels = kmeans.labels_
+#centers = kmeans.cluster_centers_
+#plt.scatter(X[:,0], X[:,1],c = kmeans.fit_predict(X), cmap='rainbow')
+#plt.show()
+
+
+
+
+
+
 #print(vec.fit_transform(measurements))
 #print(vec.get_feature_names())
