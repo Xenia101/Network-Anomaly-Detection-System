@@ -31,7 +31,8 @@ def create_flow_keys(pkt):
     return create_forward_flow_key(pkt),create_reverse_flow_key(pkt)
 
 def gen_json(flows):
-    result = list()
+    result = dict()
+    index = 1
     for flow in flows.values():
         data = dict()
         data['proto_name']              = proto_name(flow.sport,flow.dport)
@@ -45,9 +46,10 @@ def gen_json(flows):
         data['avrg_payload_len']        = round(flow.avrg_payload_len(),2)
         data['pkt_count']               = flow.pkt_count
         data['avrg_inter_arrival_time'] = flow.avrg_inter_arrival_time()
-        
-        result.append(data)
-    return result
+
+        result[index] = data
+        index += 1
+    return json.dumps(result, indent=4, sort_keys=False)
     
 def get_data(path):
     packets = rdpcap(path)
