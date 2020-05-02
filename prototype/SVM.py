@@ -28,6 +28,7 @@ from sklearn.svm import SVC
 class_names = labels
 X_train, X_test, y_train, y_test = train_test_split(X, labels, random_state = 0) 
 classifier = svm.SVC(kernel='linear', C=1).fit(X_train, y_train)
+
 np.set_printoptions(precision=2)
 
 titles_options = [("Confusion matrix, without normalization", None), ("Normalized confusion matrix", 'true')]

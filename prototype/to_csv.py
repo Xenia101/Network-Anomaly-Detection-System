@@ -7,7 +7,6 @@ import pandas as pd
 #fInput = "malware/http-flood.pcap"
 fInput = "example.pcap"
 
-
 data = get_data("pcap_files/" + fInput)
 data = gen_json(data)
 

@@ -1,23 +1,24 @@
-from tkinter import *
+from kivy.app import App
+from kivy.uix.button import  Button
+from kivy.uix.textinput import TextInput
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label 
+from kivy.core.window import Window
 
-import socket 
-  
-# Function to display hostname and 
-# IP address 
-def get_Host_name_IP(): 
-    try: 
-        host_name = socket.gethostname() 
-        host_ip = socket.gethostbyname(host_name) 
-        print("Hostname :  ",host_name) 
-        print("IP : ",host_ip) 
-    except: 
-        print("Unable to get Hostname and IP") 
-  
-# Driver code 
-get_Host_name_IP()
+class App(App):
+    def build(self):
+        self.title = 'Sample App'
+        
+        self.box = BoxLayout(orientation='horizontal', spacing=20, padding=10)
+        self.txt = TextInput(hint_text='Write here')
+        self.btn = Button(text='Submit', on_press=self.BtnEvent, size_hint =(None, .5))
 
-window = Tk()
+        self.box.add_widget(self.txt)
+        self.box.add_widget(self.btn)
+        return self.box
 
-window.title("TEST")
+    def BtnEvent(self, instance):
+        self.txt.text = ''
 
-window.mainloop()
+Window.size = (300, 100)
+App().run()
