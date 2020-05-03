@@ -1,8 +1,7 @@
-from FlowRecoder import get_data
-from FlowRecoder import gen_json
+from FlowRecoder import get_data, gen_json
+import pandas as pd
 import csv
 import json
-import pandas as pd
 
 #fInput = "malware/http-flood.pcap"
 fInput = "example.pcap"
