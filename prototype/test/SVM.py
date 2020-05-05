@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.feature_extraction import DictVectorizer
 import matplotlib.pyplot as plt
 
-data = get_data("pcap_files/malware/http-flood.pcap")
+data = get_data("../pcap_files/malware/http-flood.pcap")
 data = json.loads(gen_json(data))
 
 labels_y = [x['src'] for x in data.values()]
