@@ -17,5 +17,5 @@ y = kmeans.labels_
 # X.shape (1327, 78)
 # y.shape (1327, )
 
-plt.scatter(X[:,3], y, c=kmeans.predict(X), s=50, cmap='viridis');
+plt.scatter(X[:,0], y, c=kmeans.predict(X), s=50, cmap='viridis');
 plt.show()
