@@ -5,28 +5,25 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import DBSCAN
 from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import StandardScaler
-import mglearn
+from collections import Counter
 
-def get_X(path):
-    df = Preprocessing.RemoveCol(path, 1)
-    if df.isnull().values.any():
-        df = df[~df.isin([np.nan, np.inf, -np.inf]).any(1)]
-        df = df[df['Flow Byts/s'] != 'Infinity']
-        df = df[df['Flow Pkts/s'] != 'Infinity']
-    X = df.values
-    return X
+def percentage(p, w):
+    return 100 * float(p)/float(w)
 
-X = get_X("./CIC-output/packet-1.pcap_Flow.csv")
+X = Preprocessing.load_data("./CIC-output/packet-new.pcap_Flow.csv")
+X_test = Preprocessing.load_data("./CIC-output/http-flood.pcap_Flow.csv")
+
+#X = np.concatenate((X,X_test), axis=0)
 
 scaler = StandardScaler()
 scaler.fit(X)
 X_scaled = scaler.transform(X)
 
-dbscan = DBSCAN()
-clusters = dbscan.fit_predict(X_scaled)
+db = DBSCAN(eps=3, min_samples=10).fit(X_scaled)
+labels = db.labels_
+n_data_ = len(list(labels))
+n_noise_ = list(labels).count(-1)
 
-from sklearn.decomposition import PCA
-pca = PCA(n_components=2)
-pc = pca.fit_transform(X_scaled)
-plt.scatter(pc[:,0],pc[:,1], c=clusters, cmap=mglearn.cm2, s=10, edgecolors='black')
-plt.show()
+print("number of total data : {}".format(n_data_))
+print("number of noise data : {}".format(n_noise_))
+print("percentage of noise from total data : {:.2f}%".format(percentage(n_noise_,n_data_)))
