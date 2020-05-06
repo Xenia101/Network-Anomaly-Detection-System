@@ -1,45 +1,32 @@
 import Preprocessing
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import DBSCAN
 from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import StandardScaler
-import math
 import mglearn
 
 def get_X(path):
-    data = Preprocessing.RemoveCol(path, 1)
-    X = data.values
+    df = Preprocessing.RemoveCol(path, 1)
+    if df.isnull().values.any():
+        df = df[~df.isin([np.nan, np.inf, -np.inf]).any(1)]
+        df = df[df['Flow Byts/s'] != 'Infinity']
+        df = df[df['Flow Pkts/s'] != 'Infinity']
+    X = df.values
     return X
 
-def k_distances(x, k):
-    dim0 = x.shape[0]
-    dim1 = x.shape[1]
-    p=-2*x.dot(x.T)+np.sum(x**2, axis=1).T+ np.repeat(np.sum(x**2, axis=1),dim0,axis=0).reshape(dim0,dim0)
-    p = np.sqrt(p)
-    p.sort(axis=1)
-    p=p[:,:k]
-    pm= p.flatten()
-    pm= np.sort(pm)
-    return p, pm
+X = get_X("./CIC-output/packet-1.pcap_Flow.csv")
 
-def graph_eps():
-    m, m2= k_distances(X, 2)
-    plt.plot(m2)
-    plt.ylabel("k-distances")
-    plt.grid(True)
-    plt.show()
+scaler = StandardScaler()
+scaler.fit(X)
+X_scaled = scaler.transform(X)
 
-normal = get_X("./CIC-output/smallFlows.pcap_Flow.csv")
-anomaly = get_X("./CIC-output/http-flood.pcap_Flow.csv")
-X = np.r_['0',normal,anomaly]
-X = StandardScaler().fit_transform(X)
+dbscan = DBSCAN()
+clusters = dbscan.fit_predict(X_scaled)
 
-dbscan = DBSCAN(eps=0.25, min_samples=20).fit(X)
-y = dbscan.labels_
-
-plt.scatter(X[:, 0], y, c=dbscan.fit_predict(X))
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+pc = pca.fit_transform(X_scaled)
+plt.scatter(pc[:,0],pc[:,1], c=clusters, cmap=mglearn.cm2, s=10, edgecolors='black')
 plt.show()
-
-#n_clusters_ = len(set(clustering.labels_)) - (1 if -1 in clustering.labels_ else 0)
-#print(n_clusters_)
