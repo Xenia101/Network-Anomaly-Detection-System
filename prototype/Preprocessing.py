@@ -35,4 +35,4 @@ def load_df(path):
         df = df[df['Flow Byts/s'] != 'Nan']
         df = df[df['Flow Pkts/s'] != 'Infinity']
         df = df[df['Flow Pkts/s'] != 'Nan']
-    return X
+    return df
