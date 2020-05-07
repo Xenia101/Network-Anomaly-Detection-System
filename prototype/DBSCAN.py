@@ -11,7 +11,6 @@ def percentage(p, w):
     return 100 * float(p)/float(w)
 
 X = Preprocessing.load_data("./CIC-output/packet-new.pcap_Flow.csv")
-X_test = Preprocessing.load_data("./CIC-output/http-flood.pcap_Flow.csv")
 
 #X = np.concatenate((X,X_test), axis=0)
 
