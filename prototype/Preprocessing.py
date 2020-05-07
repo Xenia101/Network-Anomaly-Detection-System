@@ -26,3 +26,13 @@ def load_data(path):
         df = df[df['Flow Pkts/s'] != 'Nan']
     X = df.values
     return X
+
+def load_df(path):
+    df = RemoveCol(path, 1)
+    if df.isnull().values.any():
+        df = df[~df.isin([np.nan, np.inf, -np.inf]).any(1)]
+        df = df[df['Flow Byts/s'] != 'Infinity']
+        df = df[df['Flow Byts/s'] != 'Nan']
+        df = df[df['Flow Pkts/s'] != 'Infinity']
+        df = df[df['Flow Pkts/s'] != 'Nan']
+    return X
