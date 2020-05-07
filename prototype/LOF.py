@@ -21,7 +21,7 @@ def train():
 
     X['scores'] = -X_scores
     
-    number1_percent = percentage(1, len(X_scores))
+    number1_percent = percentage(10, len(X_scores))
     return X, X.sort_values(by='scores', ascending=False).head(number1_percent)['scores']
 
 def test(X, cutline):
@@ -29,18 +29,26 @@ def test(X, cutline):
     anomaly_path = "./CIC-output/http-flood.pcap_Flow.csv"
     anomaly_data = Preprocessing.load_df(anomaly_path)
 
-    nth_data = list()
-    for x in list(anomaly_data.columns):
-        nth_data.append(anomaly_data.loc[0,x])
-    X.loc[len(X)] = nth_data 
+    for xi in range(len(anomaly_data)):
+        
+        nth_data = list()
+        for x in list(anomaly_data.columns):
+            nth_data.append(anomaly_data.loc[xi,x])
+        X.loc[len(X)] = nth_data 
 
-    clf = LocalOutlierFactor(n_neighbors=3, contamination=0.1)
-    y_pred = clf.fit_predict(X.values)
-    X_scores = clf.negative_outlier_factor_
-    X_scores = np.array(X_scores, dtype=np.float64)
+        clf = LocalOutlierFactor(n_neighbors=3, contamination=0.1)
+        y_pred = clf.fit_predict(X.values)
+        X_scores = clf.negative_outlier_factor_
+        X_scores = np.array(X_scores, dtype=np.float64)
 
-    print(-X_scores[-1])
-    
+        print(-X_scores[-1])
+        if -X_scores[-1] >= cutline:
+            print('OUTtlier')
+        else:
+            print('INlier')
+        print('=====')
+        X = X.drop(X.index[len(X)-1])
+        
     return ''
 
 def cutline_score(scores):
@@ -49,4 +57,4 @@ def cutline_score(scores):
 X, train_score_1per = train()
 test(X, cutline_score(train_score_1per))
 
-#to_CSV(X)
+# to_CSV(X)
