@@ -7,6 +7,9 @@ from sklearn.neighbors import LocalOutlierFactor
 def percentage(p, w):
     return int(p*w/100)
 
+def to_CSV(X):
+    X.to_csv('output.csv', index=False)
+
 def train():
     path = "./CIC-output/packet-0507.pcap_Flow.csv"
     X = Preprocessing.load_df(path)
@@ -17,11 +20,7 @@ def train():
     X_scores = np.array(X_scores, dtype=np.float64)
 
     X['scores'] = -X_scores
-    ## to CSV
-    #X.to_csv('output.csv', index=False)
     
-    number1_percent = percentage(1, len(X_scores))
-
     number1_percent = percentage(1, len(X_scores))
     return X, X.sort_values(by='scores', ascending=False).head(number1_percent)['scores']
 
@@ -50,3 +49,4 @@ def cutline_score(scores):
 X, train_score_1per = train()
 test(X, cutline_score(train_score_1per))
 
+#to_CSV(X)
