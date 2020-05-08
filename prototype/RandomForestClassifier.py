@@ -16,11 +16,11 @@ model.fit(X, y)
 
 importance = model.feature_importances_
 
-print(len(labels))
-print(len(importance))
-
-plt.bar(labels[39:], importance[39:])
+f=plt.figure()
+ax=f.add_subplot(1,1,1)
+ax.bar(labels[:], importance[:])
 plt.rcParams['lines.linewidth'] = 10
 plt.xticks(ha='right', rotation=45)
+plt.ylabel('Importance')
 plt.show()
 
