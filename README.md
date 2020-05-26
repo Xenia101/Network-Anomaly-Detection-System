@@ -76,4 +76,28 @@
   <img src="https://github.com/Xenia101/Network-Anomaly-Detection-System/blob/master/img/img8.PNG?raw=true">
 </p>
 
+## Latent Dirichlet Allocation
 
+<p align=center>
+  <img src="https://github.com/Xenia101/Network-Anomaly-Detection-System/blob/master/img/img9.PNG?raw=true">
+</p>
+
+## 시험 결과
+
+|    File   name    	|    Total   number of Sessions    	|    Number   of inliner    	|    Number   of outlier    	|    outlier   percentage    	|
+|:-----------------:	|:--------------------------------:	|:-------------------------:	|:-------------------------:	|:--------------------------:	|
+|    Normal–1       	|                81                	|             68            	|             13            	|           16.04%           	|
+|    Normal–2       	|                80                	|             67            	|             13            	|           16.25%           	|
+|    Attack–1       	|                418               	|            169            	|            249            	|           59.56%           	|
+|    Attack–2       	|                609               	|            297            	|            312            	|           51.23%           	|
+|    Attack–3       	|                896               	|            377            	|            519            	|           57.92%           	|
+|    Attack-4       	|                509               	|             31            	|            478            	|           93.90%           	|
+
+|    File   name    	|                                 Type                                	|    Source    	|    Number   of outlier    	|    outlier   percentage    	|
+|:-----------------:	|:-------------------------------------------------------------------:	|:------------:	|:-------------------------:	|:--------------------------:	|
+|    Normal–1       	|                         Web   surfing / Game                        	|     Local    	|             13            	|           16.04%           	|
+|    Normal–2       	|                         Web   surfing / Game                        	|     Local    	|             13            	|           16.25%           	|
+|    Attack–1       	|                              http-flood                             	|     Link     	|            249            	|           59.56%           	|
+|    Attack–2       	|                           Mirai   malware                           	|     Link     	|            312            	|           51.23%           	|
+|    Attack–3       	|    The   major fraud and hacking criminal    case   "B 8322-16".    	|     Link     	|            519            	|           57.92%           	|
+|    Attack-4       	|                      Packet   Injection Attacks                     	|     Link     	|            478            	|           93.90%           	|
