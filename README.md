@@ -51,3 +51,29 @@
 |      Subflow   Fwd Packets     	|       Subflow   Fwd Bytes      	|     Subflow   Bwd Packets     	|         Subflow   Bwd Bytes        	|        Fwd   Init Win bytes        	|      Bwd   Init Win bytes      	|
 |       Fwd   Act Data Pkts      	|       Fwd   Seg Size Min       	|          Active   Min         	|            Active   Mean           	|            Active   Max            	|          Active   Std          	|
 |           Idle   Min           	|           Idle   Mean          	|           Idle   Max          	|             Idle   Std             	|                                    	|                                	|
+
+## 데이터 전처리
+- 자료의 오버플로우 또는 언더플로우를 방지 하기 위해 Standard Scaler를 수행하여 전체 데이터의 분포를 평균 0, 분산 1이 되도록 데이터 전처리
+
+<p align=center>
+  <img src="https://github.com/Xenia101/Network-Anomaly-Detection-System/blob/master/img/img5.PNG?raw=true">
+</p>
+
+## Local Outlier Factor
+- Anomaly Detection을 위한 LOF 수행 과정
+
+<p align=center>
+  <img src="https://github.com/Xenia101/Network-Anomaly-Detection-System/blob/master/img/img6.PNG?raw=true">
+</p>
+
+- 학습데이터(정상)에 대해 Local Outlier Factor 수행 결과(`.csv`)
+<p align=center>
+  <img src="https://github.com/Xenia101/Network-Anomaly-Detection-System/blob/master/img/img7.PNG?raw=true">
+</p>
+
+- 학습데이터(정상)에 대해 테스트데이터(비정상) 추가 후 Local Outlier Factor 수행 결과(`.csv`)
+<p align=center>
+  <img src="https://github.com/Xenia101/Network-Anomaly-Detection-System/blob/master/img/img8.PNG?raw=true">
+</p>
+
+
