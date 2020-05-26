@@ -6,9 +6,12 @@
 
 ## Train / Test 데이터 상세
 - Train Dataset
-  - Local에서 모은 웹서핑, 게임 등 기타 작업 시의 네트워크 패킷(`.pcap`)에 대한 64,368개의 정상 세션 데이터(`.csv`)
 
-- Test Dataset (비정상 세션 데이터)
+Local에서 모은 웹서핑, 게임 등 기타 작업 시의 네트워크 패킷(`.pcap`)에 대한 64,368개의 정상 세션 데이터(`.csv`)
+
+- Test Dataset 
+
+비정상 세션 데이터
 
 | File name 	| Total number of Sessions 	|                          Type                         	| Extension 	| Source 	|
 |:---------:	|:------------------------:	|:-----------------------------------------------------:	|:---------:	|:------:	|
@@ -35,7 +38,7 @@
 </p>
 
 ## Feature 선정
-- CICFlowMeter로 나온 84개의 Feature 중 아래 78개의 Features 사용
+- CICFlowMeter로 나온 84개의 Feature 중 아래 **78개의 Features** 사용
 
 |         Flow   duration        	|       Total   Fwd Packet       	|      Total   Bwd Packets      	|    Total   Length of Fwd Packet    	|    Total   Length of Bwd Packet    	|     Fwd   Packet Length Min    	|
 |:------------------------------:	|:------------------------------:	|:-----------------------------:	|:----------------------------------:	|:----------------------------------:	|:------------------------------:	|
@@ -101,3 +104,12 @@
 |    Attack–2       	|                           Mirai   malware                           	|     Link     	|            312            	|           51.23%           	|
 |    Attack–3       	|    The   major fraud and hacking criminal    case   "B 8322-16".    	|     Link     	|            519            	|           57.92%           	|
 |    Attack-4       	|                      Packet   Injection Attacks                     	|     Link     	|            478            	|           93.90%           	|
+
+## 결론
+본 기술에서는 네트워크가 정상일 때, Flow기반으로 IP별 네트워크 세션을 수집하여 학습 데이터셋을 만들었다. 
+
+이를 바탕으로 모델을 학습시킨 후, 테스트 데이터인 비정상 네트워크 세션에 대한 이상 행위 탐지를 수행하였다.
+
+학습을 실시하고 성능을 분석해 본 결과 평균 86%의 정확도로 네트워크 이상행위 탐지가 가능했다.
+
+
