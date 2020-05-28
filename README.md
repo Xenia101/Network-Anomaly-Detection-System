@@ -96,14 +96,14 @@ Local에서 모은 웹서핑, 게임 등 기타 작업 시의 네트워크 패�
 |    Attack–3       	|                896               	|            377            	|            519            	|           57.92%           	|
 |    Attack-4       	|                509               	|             31            	|            478            	|           93.90%           	|
 
-|    File   name    	|                                 Type                                	|    Source    	|    Number   of outlier    	|    outlier   percentage    	|
-|:-----------------:	|:-------------------------------------------------------------------:	|:------------:	|:-------------------------:	|:--------------------------:	|
-|    Normal–1       	|                         Web   surfing / Game                        	|     Local    	|             13            	|           16.04%           	|
-|    Normal–2       	|                         Web   surfing / Game                        	|     Local    	|             13            	|           16.25%           	|
-|    Attack–1       	|                              http-flood                             	|     Link     	|            249            	|           59.56%           	|
-|    Attack–2       	|                           Mirai   malware                           	|     Link     	|            312            	|           51.23%           	|
-|    Attack–3       	|    The   major fraud and hacking criminal    case   "B 8322-16".    	|     Link     	|            519            	|           57.92%           	|
-|    Attack-4       	|                      Packet   Injection Attacks                     	|     Link     	|            478            	|           93.90%           	|
+| File   name 	|                              Type                              	| Source 	|
+|:-----------:	|:--------------------------------------------------------------:	|:------:	|
+| Normal–1    	|                      Web   surfing / Game                      	|  Local 	|
+| Normal–2    	|                      Web   surfing / Game                      	|  Local 	|
+| Attack–1    	|                           http-flood                           	|  Link  	|
+| Attack–2    	|                         Mirai   malware                        	|  Link  	|
+| Attack–3    	| The   major fraud and hacking criminal     case   "B 8322-16". 	|  Link  	|
+| Attack-4    	|                   Packet   Injection Attacks                   	|  Link  	|
 
 ## 결론
 본 기술에서는 네트워크가 정상일 때, Flow기반으로 IP별 네트워크 세션을 수집하여 학습 데이터셋을 만들었다. 
