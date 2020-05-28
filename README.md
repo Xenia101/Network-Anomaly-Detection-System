@@ -121,3 +121,16 @@ Local에서 모은 웹서핑, 게임 등 기타 작업 시의 네트워크 패�
 - 네트워크 IP별 패킷에 대한 데이터를 학습하고 이상 징후 탐지 가능
 
 → 통합보안관제 적용시, 실시간 침해 처리, 범위 확대 및 인력과 시간 단축을 할 수 있으며, 알려지지 않은 위협에 대해서도 탐지 및 대응 가능
+
+## 설치 및 운영 방안
+
+<p align=center>
+  <img src="https://github.com/Xenia101/Network-Anomaly-Detection-System/blob/master/img/img10.PNG?raw=true">
+</p>
+
+- 간단하고 빠른 결과 분석 및 즉각적인 피드백
+
+- 보다  빠른 연산을 위해 GPU 연산 수행
+
+- 데이터의 수가 막대할 경우, Feature 선택시 IP 주소 추가
+
