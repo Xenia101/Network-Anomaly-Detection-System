@@ -215,3 +215,12 @@ Local에서 모은 웹서핑, 게임 등 기타 작업 시의 네트워크 패�
 |              Idle   Std             	|                       Standard   deviation time a flow was idle before becoming active                      	|
 
 ## References
+
+- 머신러닝을 이용한 개인용pc 악성코드 감염 예측
+- 네트워크에서 SVM을 기반으로하는 DDoS 공격 탐지 방법
+- MAML 알고리즘을 활용한 Ddos 공격 탐지 시스템
+- Machine Learning 알고리즘을 적용한 인터넷 애플리케이션
+- Intrusion Detection System
+- Likelihood of a Personal Computer to Be Infected with Malware
+- Anomaly based unknown Intrusion Detection in Endpoint environments
+- Network traffic features for anomaly detection in specific industrial control system network
