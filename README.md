@@ -100,10 +100,10 @@ Local에서 모은 웹서핑, 게임 등 기타 작업 시의 네트워크 패�
 |:-----------:	|:--------------------------------------------------------------:	|:------:	|
 | Normal–1    	|                      Web   surfing / Game                      	|  Local 	|
 | Normal–2    	|                      Web   surfing / Game                      	|  Local 	|
-| Attack–1    	|                           http-flood                           	|  Link  	|
-| Attack–2    	|                         Mirai   malware                        	|  Link  	|
-| Attack–3    	| The   major fraud and hacking criminal     case   "B 8322-16". 	|  Link  	|
-| Attack-4    	|                   Packet   Injection Attacks                   	|  Link  	|
+| Attack–1    	|                           http-flood                           	|  [Link](https://www.netresec.com/?page=PcapFiles)  	|
+| Attack–2    	|                         Mirai   malware                        	|  [Link](https://ieee-dataport.org/open-access/iot-network-intrusion-dataset)  	|
+| Attack–3    	| The   major fraud and hacking criminal     case   "B 8322-16". 	|  [Link](https://www.cert.se/2017/09/cert-se-tekniska-rad-med-anledning-av-det-aktuella-dataintrangsfallet-b-8322-16)  	|
+| Attack-4    	|                   Packet   Injection Attacks                   	|  [Link](https://github.com/fox-it/quantuminsert/blob/master/presentations/brocon2015/pcaps/id1.cn-inject.pcap)  	|
 
 ## 결론
 본 기술에서는 네트워크가 정상일 때, Flow기반으로 IP별 네트워크 세션을 수집하여 학습 데이터셋을 만들었다. 
