@@ -5,22 +5,22 @@
 </p>
 
 ## Train / Test 데이터 상세
-- Train Dataset
+- **Train Dataset**
 
 Local에서 모은 웹서핑, 게임 등 기타 작업 시의 네트워크 패킷(`.pcap`)에 대한 64,368개의 정상 세션 데이터(`.csv`)
 
-- Test Dataset 
+- **Test Dataset**
 
 비정상 세션 데이터
 
 | File name 	| Total number of Sessions 	|                          Type                         	| Extension 	| Source 	|
 |:---------:	|:------------------------:	|:-----------------------------------------------------:	|:---------:	|:------:	|
-|  Normal-1 	|            81            	|                   Web surfing / Game                  	|    .csv   	|  Local 	|
-|  Normal-2 	|            80            	|                   Web surfing / Game                  	|    .csv   	|  Local 	|
-|  Attack-1 	|            418           	|                       http-flood                      	|    .csv   	|  [Link](https://www.netresec.com/?page=PcapFiles)  	|
-|  Attack-2 	|            609           	|                     Mirai malware                     	|    .csv   	|  [Link](https://ieee-dataport.org/open-access/iot-network-intrusion-dataset)  	|
-|  Attack-3 	|            896           	| The major fraud and hacking criminal case "B 8322-16" 	|    .csv   	|  [Link](https://www.cert.se/2017/09/cert-se-tekniska-rad-med-anledning-av-det-aktuella-dataintrangsfallet-b-8322-16)  	|
-|  Attack-4 	|            509           	|                Packet Injection Attacks               	|    .csv   	|  [Link](https://github.com/fox-it/quantuminsert/blob/master/presentations/brocon2015/pcaps/id1.cn-inject.pcap)  	|
+|  Normal-1 	|            81            	|                   Web surfing / Game                  	|    `.csv`   	|  Local 	|
+|  Normal-2 	|            80            	|                   Web surfing / Game                  	|    `.csv`   	|  Local 	|
+|  Attack-1 	|            418           	|                       http-flood                      	|    `.csv`   	|  [Link](https://www.netresec.com/?page=PcapFiles)  	|
+|  Attack-2 	|            609           	|                     Mirai malware                     	|    `.csv`   	|  [Link](https://ieee-dataport.org/open-access/iot-network-intrusion-dataset)  	|
+|  Attack-3 	|            896           	| The major fraud and hacking criminal case "B 8322-16" 	|    `.csv`   	|  [Link](https://www.cert.se/2017/09/cert-se-tekniska-rad-med-anledning-av-det-aktuella-dataintrangsfallet-b-8322-16)  	|
+|  Attack-4 	|            509           	|                Packet Injection Attacks               	|    `.csv`   	|  [Link](https://github.com/fox-it/quantuminsert/blob/master/presentations/brocon2015/pcaps/id1.cn-inject.pcap)  	|
 
 ## 데이터 수집 - CICFlowMeter로 나온 84개의 Features.csv
 <p align=center>
