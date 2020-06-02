@@ -4,6 +4,8 @@
   <img src="https://github.com/Xenia101/Network-Anomaly-Detection-System/blob/master/img/img1.PNG?raw=true">
 </p>
 
+> Flow Based netwrok anomaly detection system
+
 ## Train / Test 데이터 상세
 - **Train Dataset**
 
