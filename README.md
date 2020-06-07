@@ -6,6 +6,14 @@
 
 > Flow Based netwrok anomaly detection system
 
+## Configuration
+
+`./prototype` → Main / function / prototype
+
+`./Web` → Network Anomaly Detection System Web
+
+`./RESTful` → Example of Restful API
+
 ## Train / Test 데이터 상세
 - **Train Dataset**
 
