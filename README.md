@@ -227,10 +227,10 @@ Local에서 모은 웹서핑, 게임 등 기타 작업 시의 네트워크 패�
 ## References
 
 - 머신러닝을 이용한 개인용pc 악성코드 감염 예측
-- 네트워크에서 SVM을 기반으로하는 DDoS 공격 탐지 방법
+- [네트워크에서 SVM을 기반으로하는 DDoS 공격 탐지 방법](https://www.researchgate.net/publication/319890791_DDoS_Detection_System_Based_on_Multiple_Machine_Learning_Combination_for_Software_Defined_Networking)
 - MAML 알고리즘을 활용한 Ddos 공격 탐지 시스템
-- Machine Learning 알고리즘을 적용한 인터넷 애플리케이션
-- Intrusion Detection System
-- Likelihood of a Personal Computer to Be Infected with Malware
-- Anomaly based unknown Intrusion Detection in Endpoint environments
-- Network traffic features for anomaly detection in specific industrial control system network
+- [Machine Learning 알고리즘을 적용한 인터넷 애플리케이션](http://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE01010370)
+- [Intrusion Detection System](https://patents.google.com/patent/US6405318B1/en)
+- [Likelihood of a Personal Computer to Be Infected with Malware](https://scholar.smu.edu/cgi/viewcontent.cgi?article=1111&context=datasciencereview)
+- [Anomaly based unknown Intrusion Detection in Endpoint environments](https://www.researchgate.net/publication/222822892_Anomaly-based_network_intrusion_detection_Techniques_systems_and_challenges)
+- [Network traffic features for anomaly detection in specific industrial control system network](https://www.mdpi.com/1999-5903/5/4/460/pdf)
