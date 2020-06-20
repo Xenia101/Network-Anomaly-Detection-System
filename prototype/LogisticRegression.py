@@ -1,11 +1,8 @@
 import numpy as np
 import pandas as pd
 import Preprocessing
-import matplotlib.pyplot as plt
 from sklearn.neighbors import LocalOutlierFactor
-from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
-from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import StandardScaler
 
 path = "./CIC-output/1.csv"
