@@ -10,9 +10,9 @@
 
 `./prototype` → Main / function / prototype
 
-`./Web` → Network Anomaly Detection System Web
+`./Web` → Network Anomaly Detection System Web (processing..)
 
-`./RESTful` → Example of Restful API
+`./RESTful` → Example of Restful API (processing..)
 
 ## Train / Test 데이터 상세
 - **Train Dataset**
