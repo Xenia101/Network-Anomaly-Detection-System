@@ -9,8 +9,6 @@ def percentage(p, w):
 
 X = Preprocessing.load_data("./CIC-output/packet-new.pcap_Flow.csv")
 
-#X = np.concatenate((X,X_test), axis=0)
-
 scaler = StandardScaler()
 scaler.fit(X)
 X_scaled = scaler.transform(X)
