@@ -1,11 +1,8 @@
 import Preprocessing
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn.cluster import DBSCAN
-from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import StandardScaler
-from collections import Counter
 
 def percentage(p, w):
     return 100 * float(p)/float(w)
